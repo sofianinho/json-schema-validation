@@ -16,17 +16,21 @@ HELP_FUN = \
 help:           ## Show this help.
 	@perl -e '$(HELP_FUN)' $(MAKEFILE_LIST)
 
-build: ##@go build the executable (you must have the go compiler in your system)
+build: ##@go Build the executable (you must have the go compiler in your system)
 	@echo building your executable
 	go get -v
 	CGO_ENABLED=0 go build
 
-image: build ##@docker build the docker image locally
+image: build ##@docker Build the docker image locally
 	@echo building your docker image
 	docker build --tag=$(IMAGE_NAME):$(IMAGE_TAG) .
 
-run: ##@docker run the example given in the example directory
+run: ##@docker Run the examples given in the example directory
 	@echo running the correct example
 	docker run -t --rm -v $(PWD)/example:/data $(IMAGE_NAME):$(IMAGE_TAG) --json-path /data/test.json --schema-path /data/schema.json
 	@echo running the wrong example
 	docker run -t --rm -v $(PWD)/example:/data $(IMAGE_NAME):$(IMAGE_TAG) --json-path /data/wrong.json --schema-path /data/schema.json
+
+clean: ## Remove the compiled binary and the package folders
+	@echo removing the binary and libs
+	rm -rf pkg src testJSONValidation 
