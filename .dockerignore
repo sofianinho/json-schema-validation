@@ -1,0 +1,6 @@
+*.json
+*.go
+example
+Makefile
+pkg 
+src
