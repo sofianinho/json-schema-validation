@@ -26,5 +26,7 @@ image: build ##@docker build the docker image locally
 	docker build --tag=$(IMAGE_NAME):$(IMAGE_TAG) .
 
 run: ##@docker run the example given in the example directory
-	@echo running the example
+	@echo running the correct example
 	docker run -t --rm -v $(PWD)/example:/data $(IMAGE_NAME):$(IMAGE_TAG) --json-path /data/test.json --schema-path /data/schema.json
+	@echo running the wrong example
+	docker run -t --rm -v $(PWD)/example:/data $(IMAGE_NAME):$(IMAGE_TAG) --json-path /data/wrong.json --schema-path /data/schema.json
