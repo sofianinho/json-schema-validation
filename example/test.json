@@ -1,0 +1,45 @@
+{
+ "contracts": [
+  {
+   "contractID": "123",
+   "tenantID": "nrj",
+   "sliceID": "nrj123",
+   "sla": "gold",
+   "startDate": "2016-09-12T11:30:00.00+01:00",
+   "endDate": "2016-09-12T12:00:00.00+01:00",
+   "contact": "notification@mvno.orange.com",
+   "location": {
+    "coordinates": {
+     "latitude": 48.714012,
+     "longitude": 2.201358
+    },
+    "address": {
+     "street": "8 avenue de la vauve",
+     "city": "Palaiseau",
+     "state": "Essonne",
+     "country": "FR"
+    }
+   },
+   "enb": {
+    "name": "OpenairInterface",
+    "enbID": "0xe00",
+    "generation": "4.9g",
+    "plmn": {
+     "tra": 1,
+     "mcc": 208,
+     "mnc": 95
+    },
+    "nbTx": 2,
+    "nbRx": 2,
+    "mme": [
+     {
+      "ipv4": "172.16.35.131",
+      "ipv6": "172:16:35::131",
+      "active": "yes",
+      "preference": "ipv4"
+     }
+    ]
+   }
+  }
+ ]
+}
