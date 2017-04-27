@@ -6,4 +6,3 @@ WORKDIR /app
 COPY ./testJSONValidation /app
 
 ENTRYPOINT ["/app/testJSONValidation"]
-CMD ["/app/testJSONValidation"]
